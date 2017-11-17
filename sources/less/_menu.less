@@ -1,0 +1,263 @@
+/*========================   Menu   ==========================*/
+
+//--------------------------------------------------------------
+//                       Menu Styles
+//--------------------------------------------------------------
+.sf-menu {
+  .clearfix;
+  display: inline-block;
+
+  > li {
+    position: relative;
+    float: left;
+
+    & + li {
+      margin-left: 20px;
+    }
+  }
+
+  a {
+    display: block;
+  }
+}
+
+//--------------------------------------------------------------
+//                     Menu item styles
+//--------------------------------------------------------------
+.sf-menu {
+  font-family: @fnt-1;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 300;
+  > li {
+    > a {
+      color: #ffffff;
+    }
+
+    &.sfHover > a, > a:hover {
+      color: #2b2929;
+    }
+
+    &.active > a {
+      color: #2b2929;
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl1 styles
+//--------------------------------------------------------------
+.sf-menu ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 235px;
+  margin-top: 30px;
+  padding: 0;
+  background: darken(@col-sch-l, 10%);
+  z-index: 2;
+  .box-sizing(border-box);
+}
+
+//--------------------------------------------------------------
+//                 Sub menu lvl1 item styles
+//--------------------------------------------------------------
+.sf-menu ul {
+  font-family: @fnt-1;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+  > li {
+    > a {
+      color: @col-fnt-2;
+      padding: 0 20px;
+    }
+
+    &.sfHover > a, > a:hover {
+      color: @col-fnt-l;
+      background: darken(@col-sch-1, 10%);
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl2 styles
+//--------------------------------------------------------------
+.sf-menu ul ul {
+  position: static;
+  top: 100%;
+  width: auto;
+  margin-top: 0;
+  padding: 0;
+  z-index: 4;
+}
+
+//--------------------------------------------------------------
+//                 Sub menu lvl2 item styles
+//--------------------------------------------------------------
+.sf-menu ul ul {
+  > li {
+    > a {
+      color: @col-fnt-2;
+      padding: 0 30px;
+    }
+
+    &.sfHover > a, > a:hover {
+      color: @col-fnt-l;
+      background: darken(@col-sch-1, 10%);
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                      sf-with-ul styles
+//--------------------------------------------------------------
+.sf-menu > li > .sf-with-ul {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -6px;
+    content: @fa-caret-down;
+    font: 400 12px/12px @fa;
+  }
+}
+
+//--------------------------------------------------------------
+//                        Responsive
+//--------------------------------------------------------------
+@media (max-width: 767px) {
+  .sf-menu {
+    display: none;
+  }
+}
+
+
+
+//--------------------------------------------------------------
+//                       Toggle menu
+//--------------------------------------------------------------
+.toggle-menu-container {
+
+  @nav-width: 273px;
+  @nav-toggle-size: 75px;
+  @nav-active-toggle-size: 30px;
+  
+  .nav {
+    margin: 0;
+    position: fixed;
+    right: -@nav-width;
+    top: 0;
+    height: 100%;
+    width: @nav-width;
+    background: @col-sch-l;
+    border-left: 1px solid darken(@col-sch-l, 10%);
+    z-index: 998;
+  }
+  
+  .nav_title{
+    padding: 20px 0;
+    background: @col-sch-2;
+  }
+  
+  .sf-menu-toggle {
+    position: fixed;
+    top: 47px;
+    right: 60px;
+  
+    width: @nav-toggle-size;
+    height: @nav-toggle-size;
+  
+    font-size: 60px;
+    line-height: @nav-toggle-size;
+  
+    color: #fff;
+    background: #adabad;
+  
+    text-align: center;
+  
+    &:hover {
+      text-decoration: none;
+      background: #fff;
+      color: #000;
+    }
+  }
+  
+  .sf-menu{
+    width: 100%;
+    > li {
+      float: none;
+      & + li { margin-left: 0; }
+      a {
+        color: @col-fnt-3;
+        background: none;
+        padding: 10px 40px;
+      }
+      &.active > a {
+        color: @col-fnt-l;
+        background: @col-sch-1;
+      }
+      &.sfHover > a, & a:hover {
+        color: @col-fnt-l;
+        background: lighten(@col-sch-1, 10%);
+      }
+    }
+
+    ul {
+      position: static;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      li {        
+        a {
+          color: @col-fnt-3;
+          background: none;
+          padding: 10px 50px;
+        }
+        &.active > a {
+          color: @col-fnt-l;
+          background: @col-sch-1;
+        }
+        &.sfHover > a, & a:hover {
+          color: @col-fnt-l;
+          background: lighten(@col-sch-1, 10%);
+        }
+      }
+      ul {
+        a { padding: 10px 60px; }
+      }
+    }
+  
+  }
+  
+  .nav.active {
+    right: 0;
+  
+    .sf-menu-toggle {
+      margin-left: 0;
+      top: 6px;
+      right: @nav-width - @nav-active-toggle-size - 10px;
+      height: @nav-active-toggle-size;
+      width: @nav-active-toggle-size;
+      font-size: 18px;
+      line-height: @nav-active-toggle-size;
+    }
+  }
+  
+  @media (max-width: 979px) {
+    .sf-menu-toggle{
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sf-menu {
+      display: block;
+      a { text-align: left; }
+    }
+  }
+
+}

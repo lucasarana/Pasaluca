@@ -1,0 +1,26 @@
+/*==================  Stuck menu  ======================*/
+@stuck-bg: darken(@col-sch-1, 5%);
+@stuck-bc: #333333;
+
+.stuck_container {
+
+}
+
+.isStuck {
+  background: @stuck-bg;
+  z-index: 999;
+  border-bottom: 1px solid @stuck-bc;  
+	.nav {
+		margin: 24px 0 24px;
+	}
+
+	.brand{
+		margin: 5px 0 5px;
+	}
+}
+
+@media only screen and (max-width: 979px) {
+  .isStuck {
+	display: none !important;
+  }
+}

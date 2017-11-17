@@ -1,0 +1,656 @@
+﻿// Libs
+@import "_mixins.less";
+@import "_variables.less";
+@import "animate.css";
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Yesteryear);
+
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    background: @footer-bg;
+    color: #333;
+    font-family: @fnt-1;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400px;
+    -webkit-text-size-adjust: none;
+    color: @col-fnt-1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    
+}
+
+h1{
+
+}
+
+h2{
+    text-align: center;
+    font-family: @fnt-1;
+	font-size: 62px;
+    line-height: 82px;
+    font-weight: 300;
+    color: @col-fnt-3;
+    @media (max-width: 767px) { font-size: 42px; line-height: 56px; }
+    em {
+        display: block;
+        font-family: @fnt-2;
+        font-size: 100px;
+        line-height: 82px;
+        font-weight: 400;     
+        @media (max-width: 767px) { font-size: 72px; line-height: 56px; } 
+    }
+}
+
+h3{
+    font-family: @fnt-1;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    color: @col-fnt-2;
+}
+
+h4{
+	
+}
+
+h5{
+	
+}
+
+h6{
+	
+}
+
+p{
+	a:hover{
+        text-decoration: underline;
+    }
+}
+
+figcaption {
+    font-family: @fnt-2;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
+    color: @col-fnt-2;    
+}
+
+.address-1 {
+    font-size: 18px;
+    line-height: 24px;
+    dt { display: inline-block; }
+    dd { display: inline-block; }
+
+    em {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    * + p {
+        margin-top: 28px;
+    }
+}
+
+.address-2 {
+    overflow: hidden;
+    margin-top: 60px;
+    .address_container {
+        width: 170px;
+        float: left;
+        @media (max-width: 979px) { float: none; width: 100%; }
+    }
+    dl {
+        margin-left: 128px;
+        float: left;
+        @media (max-width: 1199px) { margin-left: 50px; }
+        @media (max-width: 979px) { margin-left: 0; margin-top: 20px; float: none; }
+    }
+    dt { display: inline-block; }
+    dd { display: inline-block; }
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:active {
+        background: transparent;
+    }
+
+    .transition(.3s);
+}
+
+a[href^="tel:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+.fa{
+	line-height: inherit;
+}
+
+[class*='fa-']{
+    &:before{
+        font-weight: 400;
+    	font-family: @fa;
+    }     
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.indents-1 {
+    padding: 0 30px;
+    @media (max-width: 1199px) {
+      padding: 0;
+    }
+}
+
+.indents-2 {
+    padding: 0 220px;
+    @media (max-width: 1199px) {
+      padding: 0;
+    }
+}
+
+.indents-3 {
+    padding: 0 55px 0 0;
+    @media (max-width: 1199px) {
+      padding: 0;
+    }
+}
+
+/*=======================================================
+                        Components
+=========================================================*/
+@import "_menu.less";
+@import "_select-menu.less";
+@import "_stuck-menu.less";
+@import "_to-top.less";
+@import "_parallax.less";
+
+.img {
+
+    &__border {
+        border: 1px solid @col-sch-3;
+    }
+}
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+    background: @header-bg;
+
+    .brand{
+        float: left;
+    }
+
+    .nav{
+        margin: 38px 0 48px 0;
+        float: right;
+    }
+
+    @media (max-width: 767px) {
+        text-align: center;
+
+        .brand, .nav{
+            float: none;
+        }
+    }
+}
+
+/*==================     Brand     ======================*/
+.brand {
+    margin: 14px 0 0 0;
+    float: left;
+    &_name{
+        padding: 0 0 6px 4px;
+        display: inline-block;
+        overflow: hidden;
+        font-family: @fnt-2;
+        font-size: 60px;
+        line-height: 64px;
+        color: @col-fnt-l;
+    }
+}
+
+/*=======================================================
+                     CONTENT  Layout
+=========================================================*/
+
+* + p {
+    margin-top: 46px;
+}
+
+* + h2 {
+    margin-top: 138px;
+}
+
+* + h3 {
+    margin-top: 10px;
+}
+
+* + figcaption {
+    margin-top: 25px;    
+}
+
+* + address {
+    margin-top: 37px;
+}
+
+* + .row {
+    margin-top: 80px;
+    &__offset-1 {
+        margin-top: 60px;        
+    }
+    &__offset-2 {
+        margin-top: 30px;        
+    }
+}
+
+* + .decoration {
+    margin-top: 43px;
+}
+
+* + .btn {
+    margin-top: 43px;    
+}
+
+* + .gallery {
+    margin-top: 34px;
+}
+
+h2 + p {
+  margin-top: 55px;
+}
+
+h3 + p {
+    margin-top: 21px;
+}
+
+p + .img {
+    margin-top: 46px;
+}
+
+.img + h3 {
+    margin-top: 46px;
+}
+
+/*========================================================
+                     CONTENT  Styles
+=========================================================*/
+main {
+    display: block;
+    background: @content-bg;
+}
+
+/*==================      Well     ======================*/
+.well{
+    padding: 114px 0 0 0;
+
+    &__offset-1 {
+        padding: 135px 0 128px 0;
+    }
+
+    &__offset-2 {
+        padding: 141px 0 67px 0;
+    }
+
+    &__offset-3 {
+        padding: 131px 0 129px 0;
+    }
+
+    &__offset-4 {
+        padding: 116px 0 129px 0;
+    }
+}
+
+/*==================    Buttons    ======================*/
+.btn{
+    position: relative;
+    display: inline-block;
+    font-family: @fnt-1;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: @col-fnt-2;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        background: @col-sch-3;
+        height: 1px;
+        top: 22px;
+        .opacity(0);
+        .transition(all 0.3s ease);
+    }
+    &:hover {
+        color: @col-fnt-3;
+        &:before { left: 0; .opacity(1); }
+        &:after { right: 0; .opacity(1); }
+    }
+}
+
+/*================== Decoration ======================*/
+.decoration {
+    position: relative;
+    text-align: center;
+    &:before{
+        content: '';
+        position: absolute;
+        height: 1px;
+        top: 10px;
+        left: 0;
+        right: 50%;
+        margin-right: 67px;
+        margin-left: 3px;
+        background: @col-sch-3;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        top: 10px;
+        right: 0;
+        left: 50%;
+        margin-left: 67px;
+        margin-right: 3px;
+        background: @col-sch-3;
+    }
+}
+
+/*==================   Lazy Img    ======================*/
+
+@lazy-bg: #fff;
+
+.lazy-img {
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  background: @lazy-bg url(../images/lazy-loader.gif) no-repeat center center;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    .transition(1s all ease);
+    .opacity(0);
+  }
+
+  .lazy-loaded {
+    .opacity(1);
+  }
+}
+
+
+/*================== Gallery ======================*/
+.gallery {
+    width: 100%;
+    overflow: hidden;
+    @media (max-width: 767px) { width: 420px; margin: 0 auto; }
+    @media (max-width: 479px) { width: 300px; }
+    em {
+        font-size: 36px;
+        line-height: 44px;
+        color: @col-fnt-3;
+    }
+    &_col-1 { float: left; width: 30.3347280334728%;  @media (max-width: 767px) { width: 100%; } }
+    &_col-2 { float: left; width: 38.96443514644351%;  @media (max-width: 767px) { width: 100%; } }
+    &_col-3 { float: left; width: 30.70083682008368%;  @media (max-width: 767px) { width: 100%; } }
+    &_item {        
+        display: block;
+        position: relative;
+        &:hover {
+            .gallery_overlay {
+                .opacity(1);
+            }
+        }
+    }
+    &_overlay {
+        position: absolute;
+        text-align: center;
+        vertical-align: top;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .opacity(0);
+        .background(rgba(255,255,255,0.54));
+        z-index: 1;
+        .transition(all 0.3s ease)
+    }
+    &_caption {
+        position: absolute;
+        background: @col-sch-l;
+        width: 295px;
+        padding: 28px 40px 42px;
+        top: 50%;
+        margin-top: -84px;
+        left: 50%;
+        margin-left: -188px;
+        @media (max-width: 1199px) {
+          width: 240px;
+          margin-left: -150px;
+          padding: 20px 30px 30px;
+        }
+        @media (max-width: 979px) {
+          width: 200px;
+          margin-left: -120px;
+          padding: 10px 20px 20px;
+          margin-top: -62px;
+
+          em {
+              font-size: 24px;
+              line-height: 32px;
+          }
+
+          * + p {
+            margin-top: 10px;
+          }
+        }
+    }
+    img { width: 100%; }
+    * + p {
+        margin-top: 20px;
+    }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer{
+    padding: 78px 0 0 0;
+    text-align: center;
+    .socials {
+        display: inline-block;
+        overflow: hidden;
+        li {
+            float: left;
+            & + li {
+                margin-left: 100px;                
+                @media (max-width: 767px) { margin-left: 30px; }
+                @media (max-width: 479px) { margin-left: 15px; }
+            }
+        }
+        a {
+            display: inline-block;
+            width: 94px;
+            height: 94px;
+            line-height: 94px;
+            text-align: center;
+            background: @col-sch-l;
+            color: #423e3e;
+            border-radius: 50%;
+
+            font-size: 60px;
+            @media (max-width: 479px) { font-size: 40px; width: 80px; height: 80px; line-height: 80px; }
+
+            &:hover {
+                background: @col-sch-2;  
+                color: @col-fnt-l;              
+            }
+        }
+    }
+
+    .copyright {
+        color: #000000;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        * + & {
+            margin-top: 70px;
+        }
+    }
+
+    .tm {
+        background: @col-sch-2;
+        * + & {
+            margin-top: 11px;
+        }
+    }
+}
+
+
+.client {
+    font-family: @fnt-1;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #5f5e4e;
+    em{
+        display: block;
+        font-family: @fnt-2;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 400;
+    }
+    * + & {
+        margin-top: 20px;
+    }
+}
+
+
+
+.bg-1 {
+    background: @col-sch-1;
+    color: @col-fnt-l;
+    h2 { color: @col-fnt-l; }
+    h3 { color: @col-fnt-l; }
+    figcaption { color: @col-fnt-l; }
+    .decoration{
+        &:before,
+        &:after {
+            background: #563d34;
+        }
+    }
+    .btn {
+        &:before,
+        &:after {
+            background: @col-fnt-l;
+        }
+        &:hover {
+            color: @col-fnt-l;
+        }        
+    }
+}
+
+.box-1 {
+    .img {
+        margin-top: 4px;
+    }
+
+    * + & {
+        margin-top: 65px;
+    }
+
+    * + p {
+        margin-top: 1px;
+    }
+
+    * + h3 {
+        margin-top: 19px;
+    }
+}
+
+.box-2 {
+    * + & {
+        margin-top: 70px;
+    }
+}
+
+.box-3 {
+    h2 {
+        text-align: left;
+        font-size: 48px;
+        line-height: 58px;
+    }
+    * + & {
+        margin-top: 50px;
+    }
+    h2 + * {
+        margin-top: 50px;
+    }
+}
+
+/*==================  GOOGLE MAP  ======================*/
+.map { 
+  * + & {
+    margin-top: 72px;
+  }
+}
+
+.map_model {
+  height: 430px;
+}
+.map_model img {
+  max-width: none !important;
+}
+@media (max-width: 767px) {
+  .map_model {
+    height: 250px;
+  }
+}
+@media (max-width: 479px) {
+  .map_model {
+    height: 200px;
+  }
+}
+.map_locations {
+  display: none;
+}
